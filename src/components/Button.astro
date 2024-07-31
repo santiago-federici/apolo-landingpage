@@ -1,0 +1,32 @@
+---
+interface Props {
+  variant: "primary" | "secondary" | "outline" | "ghost";
+  disabled?: boolean;
+}
+
+const { variant, disabled = false } = Astro.props;
+
+const baseClasses =
+  "px-4 py-2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+let variantClasses;
+
+switch (variant) {
+  case "primary":
+    variantClasses = "bg-primary text-primary-foreground hover:bg-primary/90";
+    break;
+  case "secondary":
+    variantClasses = "bg-secondary text-foreground hover:bg-secondary/90";
+    break;
+  case "outline":
+    variantClasses =
+      "border border-border text-muted hover:bg-muted hover:text-foreground";
+    break;
+  default:
+    variantClasses = "bg-primary text-primary-foreground hover:bg-primary-dark";
+    break;
+}
+---
+
+<button class={`${baseClasses} ${variantClasses}`} disabled={disabled}>
+  <slot />
+</button>
