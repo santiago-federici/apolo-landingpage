@@ -1,0 +1,34 @@
+---
+import Button from "./Button.astro";
+import MenuIcon from "../icons/MenuIcon.astro";
+
+const navLinks = [
+  { href: "#", text: "Features" },
+  { href: "#", text: "Pricing" },
+  { href: "#", text: "About" },
+];
+---
+
+<header class="flex justify-between items-center py-4 px-8">
+  <img
+    src="/logo.png"
+    alt="logo"
+    class="aspect-square size-16 cursor-pointer"
+  />
+  <nav
+    class="space-x-4 [&>a]:transition-colors [&>a]:duration-200 max-md:hidden"
+  >
+    {
+      navLinks.map((link) => (
+        <a href={link.href} class="hover:text-primary hover:cursor-pointer">
+          {link.text}
+        </a>
+      ))
+    }
+  </nav>
+  <div class="space-x-2 max-md:hidden">
+    <Button variant="ghost">Log In</Button>
+    <Button variant="primary">Sign Up</Button>
+  </div>
+  <MenuIcon class="cursor-pointer md:hidden size-8" />
+</header>
