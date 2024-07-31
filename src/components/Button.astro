@@ -7,25 +7,25 @@ interface Props {
 const { variant, disabled = false } = Astro.props;
 
 const baseClasses =
-  "px-4 py-2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+  "px-4 py-2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
 let variantClasses;
 
 switch (variant) {
   case "primary":
-    variantClasses = "bg-primary text-primary-foreground hover:bg-primary/90";
+    variantClasses = "bg-primary text-primary-foreground hover:bg-primary/80";
     break;
   case "secondary":
-    variantClasses = "bg-secondary text-foreground hover:bg-secondary/90";
+    variantClasses = "bg-secondary text-foreground hover:bg-secondary/80";
     break;
   case "outline":
     variantClasses =
-      "border border-border text-muted hover:bg-muted hover:text-foreground";
+      "border border-border-foreground text-foreground hover:bg-foreground hover:text-background";
     break;
   case "ghost":
-    variantClasses = "text-muted hover:bg-muted-foreground";
+    variantClasses = "text-foreground hover:bg-muted";
     break;
   default:
-    variantClasses = "bg-primary text-primary-foreground hover:bg-primary-dark";
+    variantClasses = "bg-primary text-primary-foreground hover:bg-primary/90";
     break;
 }
 ---
