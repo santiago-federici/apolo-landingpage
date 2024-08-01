@@ -9,8 +9,10 @@ import BrandBadge from "./BrandBadge.astro";
 <footer
   class="mt-36 flex flex-col py-8 px-6 xl:px-36 border-t border-neutral-800"
 >
-  <div class="flex justify-between">
-    <section class="space-y-4">
+  <div class="flex md:justify-between flex-col md:flex-row space-y-4">
+    <section
+      class="space-y-4 max-sm:text-center max-sm:items-center max-sm:flex max-sm:flex-col"
+    >
       <div class="flex gap-2 items-center">
         <img src="./logo.png" alt="Logo" class="aspect-square size-12" />
         <h3 class="text-xl font-medium">Admin dashboard</h3>
@@ -68,7 +70,9 @@ import BrandBadge from "./BrandBadge.astro";
   <!-- separator -->
   <div class="border-t border-neutral-800 my-16"></div>
 
-  <div class="flex justify-between">
+  <div
+    class="flex justify-between flex-col items-center space-y-4 text-center md:text-start md:flex-row"
+  >
     <p class="text-sm text-muted-foreground font-medium">
       © 2023 Relume. All rights reserved.
     </p>
