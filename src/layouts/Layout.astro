@@ -126,4 +126,21 @@ const { title } = Astro.props;
       scroll-padding-top: 3rem;
     }
   }
+
+  .wrapper {
+    width: min(100% - 3rem, 100ch);
+    margin-inline: auto;
+  }
+
+  @media screen and (width > 768px) {
+    .wrapper {
+      width: min(100% - 7rem, 110ch);
+    }
+  }
+
+  @media screen and (width > 1024px) {
+    .wrapper {
+      width: min(100% - 7rem, 130ch);
+    }
+  }
 </style>
