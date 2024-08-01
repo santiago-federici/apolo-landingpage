@@ -6,50 +6,53 @@ import ThumbsUpIcon from "../icons/ThumbsUpIcon.astro";
 import TimerIcon from "../icons/TimerIcon.astro";
 import HandshakeIcon from "../icons/HandshakeIcon.astro";
 import BanIcon from "../icons/BanIcon.astro";
+import { Reveal } from "./Reveal.tsx";
 ---
 
-<h2 class="mt-48 mb-16 text-center text-4xl font-semibold">Features</h2>
+<Reveal client:load>
+  <h2 class="mt-48 mb-16 text-center text-4xl font-semibold">Features</h2>
 
-<section class="grid grid-cols-3 grid-rows-2 gap-8">
-  <FeatureCard
-    title="Stay organized"
-    description="Sync tokens from multiple sources to one repository, extract them in any structure using our SDK, GitHub integration, or CLI. We got you covered once you want to scale."
-  >
-    <ChartIcon class="text-primary/80 size-6" />
-  </FeatureCard>
+  <section class="grid grid-cols-3 grid-rows-2 gap-8">
+    <FeatureCard
+      title="Stay organized"
+      description="Sync tokens from multiple sources to one repository, extract them in any structure using our SDK, GitHub integration, or CLI. We got you covered once you want to scale."
+    >
+      <ChartIcon class="text-primary/80 size-6" />
+    </FeatureCard>
 
-  <FeatureCard
-    title="Automate"
-    description="Automatically sync, convert, and optimize your design tokens and vectors. Set up automated pull request with our Github integration."
-  >
-    <ZapIcon class="text-primary/80 size-6" />
-  </FeatureCard>
+    <FeatureCard
+      title="Automate"
+      description="Automatically sync, convert, and optimize your design tokens and vectors. Set up automated pull request with our Github integration."
+    >
+      <ZapIcon class="text-primary/80 size-6" />
+    </FeatureCard>
 
-  <FeatureCard
-    title="Prioritize quality"
-    description="When you’re able to put quality above anything else, it means your processes are well adopted. We can help you to prioritize the quality of your digital products."
-  >
-    <ThumbsUpIcon class="text-primary/80 size-6" />
-  </FeatureCard>
+    <FeatureCard
+      title="Prioritize quality"
+      description="When you’re able to put quality above anything else, it means your processes are well adopted. We can help you to prioritize the quality of your digital products."
+    >
+      <ThumbsUpIcon class="text-primary/80 size-6" />
+    </FeatureCard>
 
-  <FeatureCard
-    title="Save time"
-    description="Set up once, get benefits instantly. We guarantee time savings for you design and development teams while you keep doing what you’re good at and what you enjoy."
-  >
-    <TimerIcon class="text-primary/80 size-6" />
-  </FeatureCard>
+    <FeatureCard
+      title="Save time"
+      description="Set up once, get benefits instantly. We guarantee time savings for you design and development teams while you keep doing what you’re good at and what you enjoy."
+    >
+      <TimerIcon class="text-primary/80 size-6" />
+    </FeatureCard>
 
-  <FeatureCard
-    title="Get the support you need"
-    description="We're here to help you to get the output you need. Feel free to challenge us if you think your output is not possible to generate!"
-  >
-    <HandshakeIcon class="text-primary/80 size-6" />
-  </FeatureCard>
+    <FeatureCard
+      title="Get the support you need"
+      description="We're here to help you to get the output you need. Feel free to challenge us if you think your output is not possible to generate!"
+    >
+      <HandshakeIcon class="text-primary/80 size-6" />
+    </FeatureCard>
 
-  <FeatureCard
-    title="Reduce error margins"
-    description="Collaboration has never been easier, resulting in less errors and redundant meetings. Any change made is easily transferred and communicated with other teams."
-  >
-    <BanIcon class="text-primary/80 size-6" />
-  </FeatureCard>
-</section>
+    <FeatureCard
+      title="Reduce error margins"
+      description="Collaboration has never been easier, resulting in less errors and redundant meetings. Any change made is easily transferred and communicated with other teams."
+    >
+      <BanIcon class="text-primary/80 size-6" />
+    </FeatureCard>
+  </section>
+</Reveal>
