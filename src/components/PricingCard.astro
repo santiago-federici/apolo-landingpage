@@ -1,0 +1,59 @@
+---
+import CheckIcon from "../icons/CheckIcon.astro";
+import Button from "./Button.astro";
+
+interface Feature {
+  title: string;
+  description: string;
+}
+
+interface Props {
+  title: string;
+  description: string;
+  price: string;
+  features: Feature[];
+  buttonLabel: string;
+  buttonVariant?: "primary" | "secondary" | "outline" | "ghost";
+}
+
+const {
+  title,
+  description,
+  price,
+  features,
+  buttonLabel,
+  buttonVariant = "outline",
+} = Astro.props;
+---
+
+<article
+  class="border border-neutral-700 rounded-lg p-6 grid place-content-center gap-6"
+>
+  <header class="space-y-1">
+    <h3 class="text-2xl">{title}</h3>
+    <p class="text-muted-foreground text-sm">
+      {description}
+    </p>
+  </header>
+
+  <p class="text-3xl font-medium flex items-center gap-2">
+    ${price}
+    <span class="text-sm text-muted-foreground">/ month</span>
+  </p>
+
+  <section class="space-y-4">
+    {
+      features.map((feature) => (
+        <div class="flex gap-2 items-center">
+          <CheckIcon class="size-5" />
+          <div>
+            <p>{feature.title}</p>
+            <p class="text-muted-foreground text-sm">{feature.description}</p>
+          </div>
+        </div>
+      ))
+    }
+  </section>
+
+  <Button variant={buttonVariant}>{buttonLabel}</Button>
+</article>

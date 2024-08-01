@@ -1,0 +1,45 @@
+---
+import PricingCard from "./PricingCard.astro";
+
+const startUpFeatures = [
+  {
+    title: "Fast and reliable",
+    description: "We've made it fast and reliable.",
+  },
+  {
+    title: "Fast and reliable",
+    description: "We've made it fast and reliable.",
+  },
+  {
+    title: "Fast and reliable",
+    description: "We've made it fast and reliable.",
+  },
+];
+---
+
+<section class="mt-60 flex flex-col lg:flex-row justify-between gap-8 mb-96">
+  <PricingCard
+    title="Startup"
+    description="Our goal is to streamline SMB trade, making it easier and faster than ever for everyone and everywhere."
+    price="25"
+    features={startUpFeatures}
+    buttonLabel="Sign up now"
+    buttonVariant="secondary"
+  />
+  <PricingCard
+    title="Business"
+    description="Our goal is to streamline SMB trade, making it easier and faster than ever for everyone and everywhere."
+    price="40"
+    features={startUpFeatures}
+    buttonLabel="Sign up now"
+    buttonVariant="primary"
+  />
+  <PricingCard
+    title="Pro"
+    description="Our goal is to streamline SMB trade, making it easier and faster than ever for everyone and everywhere."
+    price="65"
+    features={startUpFeatures}
+    buttonLabel="Sign up now"
+    buttonVariant="secondary"
+  />
+</section>
