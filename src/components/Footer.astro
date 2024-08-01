@@ -1,0 +1,84 @@
+---
+import FigmaIcon from "../icons/FigmaIcon.astro";
+import TwitterIcon from "../icons/TwitterIcon.astro";
+import YoutubeIcon from "../icons/YoutubeIcon.astro";
+import GithubIcon from "../icons/GithubIcon.astro";
+import BrandBadge from "./BrandBadge.astro";
+---
+
+<footer
+  class="mt-36 flex flex-col py-8 px-6 xl:px-36 border-t border-neutral-800"
+>
+  <div class="flex justify-between">
+    <section class="space-y-4">
+      <div class="flex gap-2 items-center">
+        <img src="./logo.png" alt="Logo" class="aspect-square size-12" />
+        <h3 class="text-xl font-medium">Admin dashboard</h3>
+        <span
+          class="bg-neutral-300 font-medium rounded-md text-base px-2 text-background"
+        >
+          Beta
+        </span>
+      </div>
+
+      <p class="text-sm text-muted-foreground">
+        Admin dashboard is still in early Beta, so please keep in mind that
+        there may be some imperfections as we continue to work on improving it.
+      </p>
+
+      <div class="flex gap-2">
+        <BrandBadge href="#">
+          <FigmaIcon class="size-5" />
+        </BrandBadge>
+
+        <BrandBadge href="#">
+          <TwitterIcon class="size-5" />
+        </BrandBadge>
+
+        <BrandBadge href="#">
+          <YoutubeIcon class="size-5" />
+        </BrandBadge>
+
+        <BrandBadge href="#">
+          <GithubIcon class="size-5" />
+        </BrandBadge>
+      </div>
+    </section>
+
+    <section class="flex flex-col gap-2">
+      <p class="text-lg font-medium">Navigation</p>
+      <a
+        href="#"
+        class="text-base text-muted-foreground hover:text-primary duration-200"
+        >Features</a
+      >
+      <a
+        href="#"
+        class="text-base text-muted-foreground hover:text-primary duration-200"
+        >Pricing</a
+      >
+      <a
+        href="#"
+        class="text-base text-muted-foreground hover:text-primary duration-200"
+        >About</a
+      >
+    </section>
+  </div>
+
+  <!-- separator -->
+  <div class="border-t border-neutral-800 my-16"></div>
+
+  <div class="flex justify-between">
+    <p class="text-sm text-muted-foreground font-medium">
+      © 2023 Relume. All rights reserved.
+    </p>
+    <div class="text-sm text-muted-foreground space-x-2">
+      <a href="#" class="underline font-medium hover:text-white/70"
+        >Privacy Policy</a
+      >
+      <a href="#" class="underline font-medium hover:text-white/70"
+        >Terms & Conditions</a
+      >
+    </div>
+  </div>
+</footer>
