@@ -1,13 +1,14 @@
 ---
 interface Props {
-  variant: "primary" | "secondary" | "outline" | "ghost";
+  variant?: "primary" | "secondary" | "outline" | "ghost";
+  size?: "small" | "medium" | "large";
   disabled?: boolean;
 }
 
-const { variant, disabled = false } = Astro.props;
+const { variant, size, disabled = false } = Astro.props;
 
 const baseClasses =
-  "px-4 py-2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm lg:text-base font-medium ring-offset-background transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
+  "px-4 py-2 inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
 let variantClasses;
 
 switch (variant) {
@@ -28,8 +29,27 @@ switch (variant) {
     variantClasses = "bg-primary text-primary-foreground hover:bg-primary/90";
     break;
 }
+
+let sizeClasses;
+switch (size) {
+  case "small":
+    sizeClasses = "text-sm";
+    break;
+  case "medium":
+    sizeClasses = "text-base";
+    break;
+  case "large":
+    sizeClasses = "text-lg";
+    break;
+  default:
+    sizeClasses = "text-sm";
+    break;
+}
 ---
 
-<button class={`${baseClasses} ${variantClasses}`} disabled={disabled}>
+<button
+  class={`${baseClasses} ${variantClasses} ${sizeClasses}`}
+  disabled={disabled}
+>
   <slot />
 </button>
