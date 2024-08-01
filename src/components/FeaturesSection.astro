@@ -10,9 +10,11 @@ import { Reveal } from "./Reveal.tsx";
 ---
 
 <Reveal client:load>
-  <h2 class="mt-48 mb-16 text-center text-4xl font-semibold">Features</h2>
+  <h2 class="mt-48 mb-16 text-center text-5xl font-bold">Features</h2>
 
-  <section class="grid grid-cols-3 grid-rows-2 gap-8">
+  <section
+    class="grid grid-cols-2 lg:grid-cols-3 grid-rows-3 lg:grid-rows-2 gap-4 md:gap-8"
+  >
     <FeatureCard
       title="Stay organized"
       description="Sync tokens from multiple sources to one repository, extract them in any structure using our SDK, GitHub integration, or CLI. We got you covered once you want to scale."
