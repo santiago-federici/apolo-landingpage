@@ -26,9 +26,7 @@ const {
 } = Astro.props;
 ---
 
-<article
-  class="border border-neutral-700 rounded-lg p-6 grid place-content-center gap-6"
->
+<article class="border border-neutral-700 rounded-lg p-6 flex flex-col gap-6">
   <header class="space-y-1">
     <h3 class="text-2xl">{title}</h3>
     <p class="text-muted-foreground text-sm">
@@ -55,5 +53,7 @@ const {
     }
   </section>
 
-  <Button variant={buttonVariant}>{buttonLabel}</Button>
+  <Button variant={buttonVariant} className="w-full mt-auto"
+    >{buttonLabel}</Button
+  >
 </article>

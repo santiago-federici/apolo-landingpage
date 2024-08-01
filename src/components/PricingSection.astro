@@ -16,10 +16,52 @@ const startUpFeatures = [
     description: "We've made it fast and reliable.",
   },
 ];
+
+const businessFeatures = [
+  {
+    title: "Fast and reliable",
+    description: "We've made it fast and reliable.",
+  },
+  {
+    title: "Fast and reliable",
+    description: "We've made it fast and reliable.",
+  },
+  {
+    title: "Fast and reliable",
+    description: "We've made it fast and reliable.",
+  },
+  {
+    title: "Fast and reliable",
+    description: "We've made it fast and reliable.",
+  },
+];
+
+const proFeatures = [
+  {
+    title: "Fast and reliable",
+    description: "We've made it fast and reliable.",
+  },
+  {
+    title: "Fast and reliable",
+    description: "We've made it fast and reliable.",
+  },
+  {
+    title: "Fast and reliable",
+    description: "We've made it fast and reliable.",
+  },
+  {
+    title: "Fast and reliable",
+    description: "We've made it fast and reliable.",
+  },
+  {
+    title: "Fast and reliable",
+    description: "We've made it fast and reliable.",
+  },
+];
 ---
 
 <Reveal client:load>
-  <h2 class="mt-48 mb-16 text-center text-4xl font-semibold">Pricing</h2>
+  <h2 class="mt-48 mb-16 text-center text-5xl font-bold">Pricing</h2>
 
   <section class="flex flex-col lg:flex-row justify-between gap-8">
     <PricingCard
@@ -34,7 +76,7 @@ const startUpFeatures = [
       title="Business"
       description="Our goal is to streamline SMB trade, making it easier and faster than ever for everyone and everywhere."
       price="40"
-      features={startUpFeatures}
+      features={businessFeatures}
       buttonLabel="Sign up now"
       buttonVariant="primary"
     />
@@ -42,7 +84,7 @@ const startUpFeatures = [
       title="Pro"
       description="Our goal is to streamline SMB trade, making it easier and faster than ever for everyone and everywhere."
       price="65"
-      features={startUpFeatures}
+      features={proFeatures}
       buttonLabel="Sign up now"
       buttonVariant="secondary"
     />
