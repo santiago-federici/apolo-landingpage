@@ -16,7 +16,7 @@ const navLinks = [
     class="aspect-square size-16 cursor-pointer"
   />
   <nav
-    class="space-x-4 [&>a]:transition-colors [&>a]:duration-200 max-md:hidden"
+    class="flex items-center gap-4 [&>a]:transition-colors [&>a]:duration-200 max-md:hidden"
   >
     {
       navLinks.map((link) => (
@@ -25,10 +25,10 @@ const navLinks = [
         </a>
       ))
     }
+    <div class="space-x-2">
+      <Button variant="ghost">Log In</Button>
+      <Button variant="primary">Sign Up</Button>
+    </div>
   </nav>
-  <div class="space-x-2 max-md:hidden">
-    <Button variant="ghost">Log In</Button>
-    <Button variant="primary">Sign Up</Button>
-  </div>
   <MenuIcon class="cursor-pointer md:hidden size-8" />
 </header>
