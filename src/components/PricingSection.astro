@@ -61,32 +61,34 @@ const proFeatures = [
 ---
 
 <Reveal client:load>
-  <h2 class="mt-48 mb-16 text-center text-5xl font-bold">Pricing</h2>
+  <Fragment>
+    <h2 class="mt-48 mb-16 text-center text-5xl font-bold">Pricing</h2>
 
-  <section class="flex flex-col lg:flex-row justify-between gap-8">
-    <PricingCard
-      title="Startup"
-      description="Our goal is to streamline SMB trade, making it easier and faster than ever for everyone and everywhere."
-      price="25"
-      features={startUpFeatures}
-      buttonLabel="Sign up now"
-      buttonVariant="secondary"
-    />
-    <PricingCard
-      title="Business"
-      description="Our goal is to streamline SMB trade, making it easier and faster than ever for everyone and everywhere."
-      price="40"
-      features={businessFeatures}
-      buttonLabel="Sign up now"
-      buttonVariant="primary"
-    />
-    <PricingCard
-      title="Pro"
-      description="Our goal is to streamline SMB trade, making it easier and faster than ever for everyone and everywhere."
-      price="65"
-      features={proFeatures}
-      buttonLabel="Sign up now"
-      buttonVariant="secondary"
-    />
-  </section>
+    <section class="flex flex-col lg:flex-row justify-between gap-8">
+      <PricingCard
+        title="Startup"
+        description="Our goal is to streamline SMB trade, making it easier and faster than ever for everyone and everywhere."
+        price="25"
+        features={startUpFeatures}
+        buttonLabel="Sign up now"
+        buttonVariant="secondary"
+      />
+      <PricingCard
+        title="Business"
+        description="Our goal is to streamline SMB trade, making it easier and faster than ever for everyone and everywhere."
+        price="40"
+        features={businessFeatures}
+        buttonLabel="Sign up now"
+        buttonVariant="primary"
+      />
+      <PricingCard
+        title="Pro"
+        description="Our goal is to streamline SMB trade, making it easier and faster than ever for everyone and everywhere."
+        price="65"
+        features={proFeatures}
+        buttonLabel="Sign up now"
+        buttonVariant="secondary"
+      />
+    </section>
+  </Fragment>
 </Reveal>
