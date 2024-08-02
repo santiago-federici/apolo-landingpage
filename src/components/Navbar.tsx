@@ -10,9 +10,9 @@ import CloseIcon from "../icons/CloseIcons";
 import MenuIcon from "../icons/MenuIcon";
 
 const navLinks = [
-  { href: "#", text: "Features" },
-  { href: "#", text: "Pricing" },
-  { href: "#", text: "About" },
+  { href: "#features", text: "Features" },
+  { href: "#pricing", text: "Pricing" },
+  { href: "#about", text: "About" },
 ];
 
 const menuVars = {
@@ -92,8 +92,10 @@ export default function Navbar() {
             {link.text}
           </a>
         ))}
-        <Button variant="ghost">Log In</Button>
-        <Button variant="primary">Sign Up</Button>
+        <div className="flex gap-2">
+          <Button variant="ghost">Log In</Button>
+          <Button variant="primary">Sign Up</Button>
+        </div>
       </nav>
       <MenuIcon
         className="size-8 cursor-pointer md:hidden"

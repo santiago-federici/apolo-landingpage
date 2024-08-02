@@ -90,7 +90,7 @@ select {
   /* doesn't have support in all browsers yet */
   :has(:target) {
     scroll-behavior: smooth;
-    scroll-padding-top: 3rem;
+    scroll-padding-top: 10rem;
   }
 }
 
