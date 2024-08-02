@@ -1,5 +1,5 @@
 ---
-import Navbar from "../components/Navbar.astro";
+import Navbar from "../components/Navbar.tsx";
 import Footer from "../components/Footer.astro";
 import "../../globals.css";
 
@@ -21,7 +21,7 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="dark">
-    <Navbar />
+    <Navbar client:load />
     <slot />
     <Footer />
   </body>
