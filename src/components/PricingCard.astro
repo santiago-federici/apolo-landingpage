@@ -1,5 +1,6 @@
 ---
 import CheckIcon from "../icons/CheckIcon.astro";
+import { cn } from "../lib/utils";
 import Button from "./Button.astro";
 
 interface Feature {
@@ -13,7 +14,7 @@ interface Props {
   price: string;
   features: Feature[];
   buttonLabel: string;
-  buttonVariant?: "primary" | "secondary" | "outline" | "ghost";
+  isHighlighted?: boolean;
 }
 
 const {
@@ -22,11 +23,15 @@ const {
   price,
   features,
   buttonLabel,
-  buttonVariant = "outline",
+  isHighlighted = false,
 } = Astro.props;
 ---
 
-<article class="border border-neutral-700 rounded-lg p-6 flex flex-col gap-6">
+<article
+  class={cn("border border-neutral-700 rounded-lg p-6 flex flex-col gap-6", {
+    "bg-card border-primary lg:scale-110": isHighlighted,
+  })}
+>
   <header class="space-y-1">
     <h3 class="text-2xl">{title}</h3>
     <p class="text-muted-foreground text-sm">
@@ -53,7 +58,8 @@ const {
     }
   </section>
 
-  <Button variant={buttonVariant} className="w-full mt-auto"
-    >{buttonLabel}</Button
+  <Button
+    variant={isHighlighted ? "primary" : "outline"}
+    className="w-full mt-auto">{buttonLabel}</Button
   >
 </article>
