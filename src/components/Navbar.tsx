@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -75,6 +75,19 @@ export default function Navbar() {
   const toggleMenu = () => {
     setOpen((prev) => !prev);
   };
+
+  // disable scrolling when menu is open
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
     <header className="flex items-center justify-between px-6 py-4 xl:px-36">
