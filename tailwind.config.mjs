@@ -1,8 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 export default {
   darkMode: ["class"],
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
+    fontFamily: {
+      serif: ["Onest Variable", ...defaultTheme.fontFamily.serif],
+    },
 		container: {
       center: true,
       padding: "2rem",

@@ -1,4 +1,6 @@
 ---
+import "@fontsource-variable/onest";
+
 import Navbar from "../components/Navbar.tsx";
 import Footer from "../components/Footer.astro";
 import "../../globals.css";
@@ -20,7 +22,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="dark">
+  <body class="dark font-serif">
     <Navbar client:load />
     <slot />
     <Footer />
