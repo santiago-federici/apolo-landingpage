@@ -130,13 +130,25 @@ export default function Navbar() {
             >
               {navLinks.map((link) => (
                 <div key={link.text} className="overflow-hidden pb-1">
-                  <MobileNavLink title={link.text} href={link.href} />
+                  <MobileNavLink
+                    title={link.text}
+                    href={link.href}
+                    toggleMenu={toggleMenu}
+                  />
                 </div>
               ))}
 
               <div className="overflow-hidden">
-                <MobileButton variant="secondary" text="Log In" />
-                <MobileButton variant="primary" text="Sign Up" />
+                <MobileButton
+                  variant="secondary"
+                  text="Log In"
+                  toggleMenu={toggleMenu}
+                />
+                <MobileButton
+                  variant="primary"
+                  text="Sign Up"
+                  toggleMenu={toggleMenu}
+                />
               </div>
             </motion.div>
           </motion.div>
@@ -146,11 +158,20 @@ export default function Navbar() {
   );
 }
 
-const MobileNavLink = ({ title, href }: { title: string; href: string }) => {
+const MobileNavLink = ({
+  title,
+  href,
+  toggleMenu,
+}: {
+  title: string;
+  href: string;
+  toggleMenu: () => void;
+}) => {
   return (
     <motion.div
       variants={mobileNavLinkVars}
       className="text-center text-4xl transition-colors duration-200 hover:cursor-pointer hover:text-primary"
+      onClick={toggleMenu}
     >
       <a href={href}>{title}</a>
     </motion.div>
@@ -160,14 +181,17 @@ const MobileNavLink = ({ title, href }: { title: string; href: string }) => {
 const MobileButton = ({
   text,
   variant,
+  toggleMenu,
 }: {
   text: string;
   variant?: "primary" | "secondary" | "ghost" | "outline";
+  toggleMenu: () => void;
 }) => {
   return (
     <motion.div
       variants={mobileNavLinkVars}
       className="text-center text-4xl transition-colors duration-200 hover:cursor-pointer hover:text-primary"
+      onClick={toggleMenu}
     >
       <Button variant={variant} className="w-full">
         {text}
