@@ -99,6 +99,7 @@ export default function Navbar() {
       <nav className="flex items-center gap-4 max-md:hidden [&>a]:transition-colors [&>a]:duration-200">
         {navLinks.map((link) => (
           <a
+            key={link.text}
             href={link.href}
             className="hover:cursor-pointer hover:text-primary"
           >
