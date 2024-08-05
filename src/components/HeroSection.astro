@@ -1,35 +1,41 @@
 ---
+import type { delay } from "framer-motion";
 import Button from "./Button.astro";
 import { Reveal } from "./Reveal.tsx";
 ---
 
-<Reveal client:load>
-  <Fragment>
-    <section
-      class="mt-16 flex flex-col items-center text-center gap-6 lg:gap-8"
-    >
-      <div class="space-y-2 lg:space-y-4 grid place-items-center">
-        <h1 class="text-5xl font-bold max-w-[20ch]">
-          Elevate Your Barbershop to the <span
-            class="bg-gradient-to-r from-pink-200 to-primary text-transparent bg-clip-text"
-            >Next Level</span
-          >
-        </h1>
-        <p class="text-lg lg:text-xl text-white/70 max-w-[50ch]">
-          Take control of your appointments, finances, and team with our
-          powerful and intuitive admin dashboard.
-        </p>
-      </div>
-      <div class="space-x-2">
-        <Button variant="primary" size="medium">Get started now</Button>
-        <Button variant="secondary" size="medium">Free live demo</Button>
-      </div>
+<section class="mt-16 flex flex-col items-center text-center gap-6 lg:gap-8">
+  <div class="grid place-items-center">
+    <Reveal client:load className="mb-2 lg:mb-4">
+      <h1 class="text-5xl font-bold max-w-[20ch]">
+        Elevate Your Barbershop to the
+        <span
+          class="bg-gradient-to-r from-pink-200 to-primary text-transparent bg-clip-text"
+        >
+          Next Level
+        </span>
+      </h1>
+    </Reveal>
 
-      <img
-        src="./hero-img.webp"
-        alt="Image of the software"
-        class="aspect-video bg-card w-full rounded-lg mt-8 md:mt-12 lg:mt-16 object-cover"
-      />
-    </section>
-  </Fragment>
-</Reveal>
+    <Reveal client:load delay={0.15}>
+      <p class="text-lg lg:text-xl text-white/70 max-w-[50ch]">
+        Take control of your appointments, finances, and team with our powerful
+        and intuitive admin dashboard.
+      </p>
+    </Reveal>
+  </div>
+  <Reveal client:load delay={0.3}>
+    <div class="space-x-2">
+      <Button variant="primary" size="medium">Get started now</Button>
+      <Button variant="secondary" size="medium">Free live demo</Button>
+    </div>
+  </Reveal>
+
+  <Reveal client:load delay={0.45}>
+    <img
+      src="./hero-img.webp"
+      alt="Image of the software"
+      class="aspect-video bg-card w-full rounded-lg mt-8 md:mt-12 lg:mt-16 object-cover"
+    />
+  </Reveal>
+</section>
