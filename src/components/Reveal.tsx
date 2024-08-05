@@ -1,11 +1,15 @@
 import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 
-interface Props {
+export function Reveal({
+  children,
+  className,
+  delay,
+}: {
   children: JSX.Element;
-}
-
-export function Reveal({ children }: Props) {
+  className?: string;
+  delay?: number;
+}) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
 
@@ -28,11 +32,15 @@ export function Reveal({ children }: Props) {
         animate: {
           opacity: 1,
           y: 0,
+          transition: {
+            delay: delay || 0,
+          },
         },
       }}
       initial="initial"
       animate={mainControls}
       transition={{ duration: 0.5, delay: 0.25 }}
+      className={className}
     >
       {children}
     </motion.div>
